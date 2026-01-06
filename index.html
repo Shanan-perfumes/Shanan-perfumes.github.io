@@ -55,7 +55,58 @@
             padding: 0 20px;
         }
 
-        /* Collection Tabs - УВЕЛИЧЕННЫЕ КАРТИНКИ */
+        /* УЛУЧШЕННЫЙ И КОМПАКТНЫЙ Currency Selector */
+        .currency-selector {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            z-index: 1001;
+            display: flex;
+            gap: 6px;
+            background: var(--light);
+            padding: 5px 8px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            align-items: center;
+            box-shadow: var(--shadow);
+            font-size: 0.7rem;
+            min-width: auto;
+            width: auto;
+        }
+
+        .currency-selector span {
+            font-weight: 600;
+            color: var(--secondary);
+            white-space: nowrap;
+        }
+
+        .currency-selector select {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 3px 6px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            min-width: 60px;
+            max-width: 70px;
+        }
+
+        .currency-selector select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+
+        .currency-selector select option {
+            background: var(--light);
+            color: var(--text);
+        }
+
+        /* Collection Tabs */
         .collection-tabs {
             display: flex;
             justify-content: center;
@@ -202,7 +253,7 @@
         /* Theme Switcher */
         .theme-switcher {
             position: fixed;
-            top: 20px;
+            top: 100px;
             right: 20px;
             z-index: 1001;
             display: flex;
@@ -784,6 +835,7 @@
             text-align: center;
             flex: 1;
             min-width: 60px;
+            position: relative;
         }
 
         .size-option:hover {
@@ -797,11 +849,15 @@
         }
 
         .sprays-info {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             color: var(--text);
             opacity: 0.7;
-            margin-top: 4px;
+            margin-top: 2px;
             font-family: 'Inter', sans-serif;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         .product-price {
@@ -1396,7 +1452,153 @@
             gap: 15px;
         }
 
-        /* ИЗМЕНЕННЫЕ СТИЛИ ДЛЯ ПОЛЕЙ ВВОДА В CHECKOUT */
+        /* Shipping Options */
+        .shipping-options {
+            margin: 25px 0;
+            padding: 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .shipping-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .shipping-option {
+            margin-bottom: 15px;
+        }
+
+        .shipping-option label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .shipping-option label:hover {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .shipping-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--secondary);
+        }
+
+        /* EU Delivery Styles */
+        .eu-delivery-section {
+            display: none;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(86, 98, 246, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(86, 98, 246, 0.2);
+        }
+
+        .eu-delivery-section.active {
+            display: block;
+        }
+
+        .eu-delivery-section .section-title {
+            color: #5662f6;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .supplier-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .supplier-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid rgba(86, 98, 246, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .supplier-option:hover {
+            border-color: #5662f6;
+            background: rgba(86, 98, 246, 0.05);
+        }
+
+        .supplier-option.selected {
+            border-color: #5662f6;
+            background: rgba(86, 98, 246, 0.1);
+        }
+
+        .supplier-logo {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #5662f6;
+        }
+
+        .supplier-info {
+            flex: 1;
+        }
+
+        .supplier-info h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .supplier-price {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .additional-options {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .additional-option {
+            margin-bottom: 12px;
+        }
+
+        .additional-option label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .option-hint {
+            font-size: 0.8rem;
+            color: var(--text);
+            opacity: 0.6;
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        /* Обновленные стили для полей ввода в checkout */
         .checkout-modal input[type="text"],
         .checkout-modal input[type="tel"],
         .checkout-modal input[type="email"],
@@ -1556,6 +1758,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 10px;
+            font-family: 'Inter', sans-serif;
         }
 
         .summary-total {
@@ -1727,6 +1930,26 @@
             .collection-tab img {
                 height: 200px;
             }
+            
+            /* Уменьшенный currency selector на планшетах */
+            .currency-selector {
+                top: 80px;
+                left: 15px;
+                padding: 4px 6px;
+                font-size: 0.65rem;
+                gap: 5px;
+            }
+            
+            .currency-selector select {
+                padding: 2px 4px;
+                font-size: 0.65rem;
+                min-width: 55px;
+            }
+            
+            .theme-switcher {
+                top: 80px;
+                right: 15px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1775,8 +1998,9 @@
             }
 
             .theme-switcher {
-                top: 15px;
-                right: 15px;
+                top: 70px;
+                right: 10px;
+                padding: 6px;
             }
 
             .header-actions {
@@ -1845,7 +2069,7 @@
                 max-width: 400px;
             }
 
-            /* Адаптивность для мобильных - ИЗМЕНЕННЫЕ СТИЛИ */
+            /* Адаптивность для мобильных */
             .checkout-modal input[type="text"],
             .checkout-modal input[type="tel"],
             .checkout-modal input[type="email"],
@@ -1866,6 +2090,24 @@
             .checkout-modal .form-group label {
                 font-size: 1rem;
                 margin-bottom: 10px;
+            }
+            
+            /* Компактный currency selector на мобильных */
+            .currency-selector {
+                left: 10px;
+                top: 70px;
+                flex-direction: row;
+                gap: 4px;
+                padding: 3px 5px;
+                font-size: 0.6rem;
+                border-radius: 12px;
+            }
+            
+            .currency-selector select {
+                padding: 2px 3px;
+                font-size: 0.6rem;
+                min-width: 50px;
+                max-width: 50px;
             }
         }
 
@@ -1896,10 +2138,14 @@
             }
 
             .theme-switcher {
-                top: 10px;
+                top: 60px;
                 right: 10px;
-                flex-direction: column;
-                gap: 5px;
+                padding: 4px;
+            }
+
+            .theme-btn {
+                padding: 4px 8px;
+                font-size: 0.7rem;
             }
 
             .header-actions {
@@ -1924,10 +2170,41 @@
             .collection-tab img {
                 height: 160px;
             }
+            
+            /* Супер компактный currency selector на маленьких экранах */
+            .currency-selector {
+                top: 60px;
+                left: 8px;
+                padding: 2px 4px;
+                font-size: 0.55rem;
+                gap: 3px;
+                border-radius: 10px;
+            }
+            
+            .currency-selector select {
+                padding: 1px 2px;
+                font-size: 0.55rem;
+                min-width: 45px;
+                max-width: 45px;
+                border-radius: 8px;
+            }
+            
+            .currency-selector span {
+                font-size: 0.55rem;
+            }
         }
     </style>
 </head>
 <body data-theme="dark">
+    <!-- КОМПАКТНЫЙ Currency Selector -->
+    <div class="currency-selector">
+        <span>Currency:</span>
+        <select id="currencySelect">
+            <option value="lei">lei</option>
+            <option value="eur">EUR</option>
+        </select>
+    </div>
+
     <!-- Welcome Screen -->
     <div class="welcome-screen" id="welcomeScreen">
         <div class="welcome-logo">
@@ -4205,7 +4482,7 @@
             </div>
             <div id="cart-total" class="cart-total" style="display: none;">
                 <h3>Order Summary</h3>
-                <div class="total-price">Total: <span id="total-amount">0</span> lei</div>
+                <div class="total-price">Total: <span id="total-amount">0</span> <span id="cart-currency">lei</span></div>
                 <button class="btn checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
             </div>
         </div>
@@ -4262,10 +4539,14 @@
                 </div>
                 <div class="checkout-step" data-step="3">
                     <div class="step-number">3</div>
-                    <div class="step-label">Contact</div>
+                    <div class="step-label">Delivery to EU</div>
                 </div>
                 <div class="checkout-step" data-step="4">
                     <div class="step-number">4</div>
+                    <div class="step-label">Contact</div>
+                </div>
+                <div class="checkout-step" data-step="5">
+                    <div class="step-number">5</div>
                     <div class="step-label">Confirmation</div>
                 </div>
             </div>
@@ -4281,7 +4562,7 @@
                             </div>
                             <h3>Contact for Card Payment</h3>
                             <p>Contact us via social media to complete your order</p>
-                            <div class="delivery-info">✅ Available in all cities of România</div>
+                            <div class="delivery-info">✅ Available in all cities of Romania</div>
                         </div>
                         <div class="payment-method" data-method="cash">
                             <div class="payment-icon">
@@ -4315,15 +4596,16 @@
                         <div class="location-options">
                             <div class="form-group">
                                 <label for="country" class="required">Country</label>
-                                <select class="country-select" id="country">
+                                <select class="country-select" id="country" onchange="handleCountryChange()">
                                     <option value="">Select Country</option>
                                     <option value="Romania" selected>Romania</option>
+                                    <option value="EU">EU Countries</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
                                 <label for="city" class="required">City</label>
-                                <select class="city-select" id="city">
+                                <select class="city-select" id="city" onchange="handleCityChange()">
                                     <option value="">Select City</option>
                                     <!-- Romanian cities will be populated here -->
                                 </select>
@@ -4348,15 +4630,86 @@
                     </div>
                 </div>
                 
-                <!-- Step 3: Contact Information -->
+                <!-- Step 3: EU Delivery Section -->
                 <div class="checkout-section" id="step3">
+                    <h3 class="section-title">Delivery to EU Countries</h3>
+                    
+                    <div class="eu-delivery-section" id="euDeliverySection">
+                        <h4 class="section-title">Select Delivery Supplier</h4>
+                        <p>Choose your preferred delivery service for EU countries:</p>
+                        
+                        <div class="supplier-options">
+                            <div class="supplier-option" data-supplier="posta-romana">
+                                <div class="supplier-logo">
+                                    <i class="fas fa-mail-bulk"></i>
+                                </div>
+                                <div class="supplier-info">
+                                    <h4>Poşta Romana</h4>
+                                    <div class="supplier-price">20€ (estimated)</div>
+                                </div>
+                            </div>
+                            <div class="supplier-option" data-supplier="dhl">
+                                <div class="supplier-logo">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <div class="supplier-info">
+                                    <h4>DHL Express</h4>
+                                    <div class="supplier-price">40~70€ (estimated)</div>
+                                </div>
+                            </div>
+                            <div class="supplier-option" data-supplier="fedex">
+                                <div class="supplier-logo">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <div class="supplier-info">
+                                    <h4>FedEx</h4>
+                                    <div class="supplier-price">50~100€ (estimated)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Shipping Options -->
+                    <div class="shipping-options">
+                        <div class="shipping-title">
+                            <i class="fas fa-shipping-fast"></i>
+                            Shipping Options
+                        </div>
+                        
+                        <div class="additional-options">
+                            <div class="additional-option">
+                                <label>
+                                    <input type="checkbox" id="rambusOption">
+                                    Rambus - +<span id="rambus-price">5</span> <span id="rambus-currency">€</span>
+                                </label>
+                            </div>
+                            
+                            <div class="additional-option">
+                                <label>
+                                    <input type="checkbox" id="cardOption">
+                                    Card
+                                    <span class="option-hint">contact with seller</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout-actions">
+                        <button class="btn-back" onclick="goToStep(2)">Back</button>
+                        <button class="btn-pay" onclick="goToStep(4)">Continue</button>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Contact Information -->
+                <div class="checkout-section" id="step4">
                     <h3 class="section-title" id="paymentTitle">Contact Information</h3>
                     
                     <!-- Contact Payment Form -->
                     <div class="contact-payment-info payment-form" id="contactPaymentForm">
                         <div class="form-group">
                             <label for="phoneNumber" class="required">Phone Number</label>
-                            <input type="tel" id="phoneNumber" placeholder="+407XXXXXXXX" required>
+                            <!-- УБРАНО ОГРАНИЧЕНИЕ НА РУМЫНСКИЙ НОМЕР -->
+                            <input type="tel" id="phoneNumber" placeholder="Enter your phone number" required>
                             <div class="error-message" id="phoneError">Please enter a valid phone number</div>
                         </div>
                         
@@ -4379,7 +4732,7 @@
                         <div class="checkout-summary">
                             <p>You've selected Contact Payment. Your order will be delivered to:</p>
                             <p id="deliveryAddress"></p>
-                            <p>Total amount: <span id="contactTotalAmount">0</span> lei</p>
+                            <p>Total amount: <span id="contactTotalAmount">0</span> <span id="contact-currency">lei</span></p>
                         </div>
 
                         <div class="social-contact-options">
@@ -4408,7 +4761,8 @@
                     <div class="cash-payment-info payment-form" id="cashPaymentInfo">
                         <div class="form-group">
                             <label for="cashPhoneNumber" class="required">Phone Number</label>
-                            <input type="tel" id="cashPhoneNumber" placeholder="+407XXXXXXXX" required>
+                            <!-- УБРАНО ОГРАНИЧЕНИЕ НА РУМЫНСКИЙ НОМЕР -->
+                            <input type="tel" id="cashPhoneNumber" placeholder="Enter your phone number" required>
                             <div class="error-message" id="cashPhoneError">Please enter a valid phone number</div>
                         </div>
                         
@@ -4431,39 +4785,47 @@
                         <div class="checkout-summary">
                             <p>You've selected Cash on Delivery. Your order will be delivered to:</p>
                             <p id="cashDeliveryAddress"></p>
-                            <p>You'll pay <span id="cashTotalAmount">0</span> lei when you receive your order.</p>
+                            <p>You'll pay <span id="cashTotalAmount">0</span> <span id="cash-currency">lei</span> when you receive your order.</p>
                         </div>
                     </div>
                     
                     <div class="checkout-summary">
                         <div class="summary-item">
                             <span>Subtotal:</span>
-                            <span id="checkoutSubtotal">0 lei</span>
+                            <span id="checkoutSubtotal">0 <span class="summary-currency">lei</span></span>
                         </div>
                         <div class="summary-item">
                             <span>Shipping:</span>
-                            <span id="checkoutShipping">0 lei</span>
+                            <span id="checkoutShipping">0 <span class="summary-currency">lei</span></span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Rambus:</span>
+                            <span id="checkoutRambus">0 <span class="summary-currency">lei</span></span>
                         </div>
                         <div class="summary-total">
                             <span>Total:</span>
-                            <span id="checkoutTotal">0 lei</span>
+                            <span id="checkoutTotal">0 <span class="summary-currency">lei</span></span>
                         </div>
                     </div>
                     
                     <div class="checkout-actions">
-                        <button class="btn-back" onclick="goToStep(2)">Back</button>
+                        <button class="btn-back" onclick="goToStep(3)">Back</button>
                         <button class="btn-pay" id="payButton" onclick="processPayment()">Complete Order</button>
                     </div>
                 </div>
                 
-                <!-- Step 4: Confirmation -->
-                <div class="checkout-section" id="step4">
+                <!-- Step 5: Confirmation -->
+                <div class="checkout-section" id="step5">
                     <div class="order-confirmed">
                         <i class="fas fa-check-circle"></i>
-                        <h3>Order Confirmed!</h3>
-                        <p id="confirmationMessage">You have selected the payment method. Please go to the section you selected (Telegram, Instagram or WhatsApp) to complete your payment.</p>
+                        <h3 id="confirmationTitle">Order Confirmed!</h3>
+                        <p id="confirmationMessage">Your order has been placed successfully. We will contact you shortly to confirm delivery details.</p>
                         <p>Order ID: <strong id="orderId">SHN-2023-001</strong></p>
-                        <p>We will contact you shortly to confirm delivery details.</p>
+                        
+                        <div id="euConfirmationMessage" style="display: none;">
+                            <p><strong>WE WILL CONTACT YOU SHORTLY</strong></p>
+                            <p>Our team will reach out to you to finalize the delivery details and provide exact shipping costs.</p>
+                        </div>
                         
                         <div class="social-contact-options" id="confirmationSocialOptions">
                             <a href="https://www.instagram.com/shanan_perfumes" target="_blank" class="social-contact-option">
@@ -4505,6 +4867,41 @@
         let ratings = JSON.parse(localStorage.getItem('ratings')) || {};
         let currentCollection = 'versace';
         
+        // Currency variables
+        let currentCurrency = localStorage.getItem('currency') || 'lei';
+        const EUR_TO_LEI_RATE = 5.07;
+        
+        // Checkout variables
+        let currentStep = 1;
+        let selectedPaymentMethod = '';
+        let selectedCity = '';
+        let selectedCountry = 'Romania';
+        let selectedSupplier = '';
+        let orderData = {
+            paymentMethod: '',
+            country: '',
+            city: '',
+            address: '',
+            supplier: '',
+            total: 0
+        };
+
+        // Romanian cities list
+        const romanianCities = [
+            "Constanța", "Alba Iulia", "Arad", "Pitești", "Bacău", "Oradea", "Bistrița", "Botoșani", "Brașov", "Brăila", "Buzău",
+            "Reșița", "Călărași", "Cluj-Napoca", "Sfântu Gheorghe", "Târgoviște", "Craiova", "Galați",
+            "Giurgiu", "Târgu Jiu", "Miercurea Ciuc", "Deva", "Slobozia", "Iași", "București", "Baia Mare", "Drobeta-Turnu Severin",
+            "Târgu Mureș", "Piatra Neamț", "Slatina", "Ploiești", "Satu Mare", "Zalău", "Sibiu", "Suceava", "Alexandria",
+            "Timisoara", "Tulcea", "Vaslui", "Râmnicu Vâlcea", "Focșani"
+        ].sort();
+
+        // EU countries list (EU member states only)
+        const euCountries = [
+            "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Finland",
+            "France", "Germany", "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg", "Malta",
+            "Netherlands", "Poland", "Portugal", "Romania", "Slovakia", "Slovenia", "Spain", "Sweden"
+        ].sort();
+
         // DOM elements
         const welcomeScreen = document.getElementById('welcomeScreen');
         const header = document.getElementById('header');
@@ -4521,28 +4918,139 @@
         const mainContent = document.getElementById('main-content');
         const searchInput = document.getElementById('searchInput');
         const searchResults = document.getElementById('searchResults');
+        
+        // Currency selector
+        const currencySelect = document.getElementById('currencySelect');
 
-        // Checkout functionality
-        let currentStep = 1;
-        let selectedPaymentMethod = '';
-        let selectedCity = '';
-        let selectedCountry = 'Romania';
-        let orderData = {
-            paymentMethod: '',
-            country: '',
-            city: '',
-            address: '',
-            total: 0
-        };
+        // Функция для округления до целого числа в евро
+        function convertCurrency(priceInLei, toCurrency = null) {
+            const targetCurrency = toCurrency || currentCurrency;
+            
+            if (targetCurrency === 'lei') {
+                return priceInLei;
+            } else if (targetCurrency === 'eur') {
+                // Конвертируем в евро и округляем до целого числа
+                const priceInEur = priceInLei / EUR_TO_LEI_RATE;
+                return Math.round(priceInEur); // Округляем до целого числа
+            }
+            return priceInLei;
+        }
 
-        // Romanian cities list
-        const romanianCities = [
-            "Constanța", "Alba Iulia", "Arad", "Pitești", "Bacău", "Oradea", "Bistrița", "Botoșani", "Brașov", "Brăila", "Buzău",
-            "Reșița", "Călărași", "Cluj-Napoca", "Sfântu Gheorghe", "Târgoviște", "Craiova", "Galați",
-            "Giurgiu", "Târgu Jiu", "Miercurea Ciuc", "Deva", "Slobozia", "Iași", "București", "Baia Mare", "Drobeta-Turnu Severin",
-            "Târgu Mureș", "Piatra Neamț", "Slatina", "Ploiești", "Satu Mare", "Zalău", "Sibiu", "Suceava", "Alexandria",
-            "Timisoara", "Tulcea", "Vaslui", "Râmnicu Vâlcea", "Focșani"
-        ].sort();
+        // Function to format price with currency
+        function formatPrice(priceInLei, showCurrency = true) {
+            const convertedPrice = convertCurrency(priceInLei);
+            const currencySymbol = currentCurrency === 'lei' ? 'lei' : '€';
+            
+            if (showCurrency) {
+                // Для евро показываем целое число, для леев без десятичных
+                if (currentCurrency === 'eur') {
+                    return `${convertedPrice} ${currencySymbol}`;
+                } else {
+                    return `${convertedPrice} ${currencySymbol}`;
+                }
+            }
+            return convertedPrice.toString();
+        }
+
+        // Function to update currency on all elements
+        function updateCurrencyOnPage() {
+            // Update product prices
+            document.querySelectorAll('.product-card').forEach(card => {
+                const sizeOptions = card.querySelectorAll('.size-option');
+                const priceElement = card.querySelector('.price');
+                const currencyElement = card.querySelector('.currency');
+                
+                if (sizeOptions.length > 0) {
+                    const selectedSize = card.querySelector('.size-option.selected');
+                    if (selectedSize) {
+                        const priceInLei = parseFloat(selectedSize.getAttribute('data-price')) || 0;
+                        
+                        if (priceElement) {
+                            priceElement.innerHTML = formatPrice(priceInLei, false).replace('lei', '').replace('€', '') + 
+                                '<span class="currency"> ' + (currentCurrency === 'lei' ? 'lei' : '€') + '</span>';
+                        }
+                    }
+                }
+                
+                // Update all size options
+                sizeOptions.forEach(option => {
+                    const spraysInfo = option.querySelector('.sprays-info');
+                    if (spraysInfo) {
+                        // Keep only the number of sprays
+                        const spraysText = spraysInfo.textContent;
+                        const spraysNumber = spraysText.match(/\d+/);
+                        if (spraysNumber) {
+                            spraysInfo.textContent = `${spraysNumber[0]} sprays`;
+                        }
+                    }
+                });
+            });
+            
+            // Update cart
+            if (cartPage.classList.contains('active')) {
+                showCartPage();
+            }
+            
+            // Update checkout if open
+            if (document.getElementById('checkoutModal').classList.contains('active')) {
+                updateCheckoutSummary();
+            }
+            
+            // Update currency in shipping options
+            updateShippingCurrency();
+        }
+
+        // Function to update currency in shipping options
+        function updateShippingCurrency() {
+            const rambusPrice = document.getElementById('rambus-price');
+            const rambusCurrency = document.getElementById('rambus-currency');
+            
+            if (rambusPrice && rambusCurrency) {
+                const rambusInLei = 5;
+                
+                if (currentCurrency === 'lei') {
+                    rambusPrice.textContent = rambusInLei;
+                    rambusCurrency.textContent = 'lei';
+                } else {
+                    const rambusInEur = convertCurrency(rambusInLei);
+                    rambusPrice.textContent = rambusInEur;
+                    rambusCurrency.textContent = '€';
+                }
+            }
+            
+            // Update supplier prices
+            document.querySelectorAll('.supplier-price').forEach(priceElement => {
+                const priceText = priceElement.textContent;
+                const priceMatch = priceText.match(/(\d+)/);
+                if (priceMatch) {
+                    if (currentCurrency === 'lei') {
+                        priceElement.textContent = priceText.replace(priceMatch[1], parseInt(priceMatch[1]) * EUR_TO_LEI_RATE) + ' (estimated)';
+                    } else {
+                        priceElement.textContent = priceText;
+                    }
+                }
+            });
+        }
+
+        // Function to initialize currency
+        function initCurrency() {
+            // Set saved value
+            if (currencySelect) {
+                currencySelect.value = currentCurrency;
+            }
+            
+            // Update currency on page
+            updateCurrencyOnPage();
+            
+            // Event listener
+            if (currencySelect) {
+                currencySelect.addEventListener('change', function() {
+                    currentCurrency = this.value;
+                    localStorage.setItem('currency', currentCurrency);
+                    updateCurrencyOnPage();
+                });
+            }
+        }
 
         // Function to show notifications
         function showNotification(message, type = 'success') {
@@ -4623,91 +5131,91 @@
                     name: 'The Most Intense',
                     brand: 'AZZARO',
                     image: 'https://beautyhouse.com/cdn/shop/files/02vsaxt1u7.png?v=1757965049&width=1600',
-                    description: 'Citrus-woody. Freshness of bergamot and mandarin with spicy cardamom notes, elegance of woody accords (vetiver, cedar). Intense, masculine.'
+                    description: 'Citrus-woody fragrance with bergamot, mandarin and spicy cardamom notes.'
                 },
                 {
                     id: 5,
                     name: 'Acqua Di Gio',
                     brand: 'GIORGIO ARMANI',
                     image: 'https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/1398723_7/w=1500,h=1500',
-                    description: 'Marine, aromatic. Refreshing marine notes, green hints of cypress and rosemary, earthly patchouli. Deep aquatic.'
+                    description: 'Marine, aromatic fragrance with refreshing marine notes.'
                 },
                 {
                     id: 6,
                     name: 'Kenzo Pour Homme',
                     brand: 'KENZO',
                     image: 'https://media.douglas.si/media/image/56/eb/06/KE014100_3_1280x1280@2x.jpg',
-                    description: 'Fresh aquatic. Water notes, mint, green mandarin cedar. Light refreshing.'
+                    description: 'Fresh aquatic fragrance with water notes, mint and green mandarin.'
                 },
                 {
                     id: 7,
                     name: 'Allure Homme Sport',
                     brand: 'CHANEL',
                     image: 'https://visionaryfragranceseu.com/cdn/shop/products/CHANELALLURESPORTLarge-310983.jpg?v=1689906970',
-                    description: 'Citrus-woody, spicy. Bright citrus (lemon, orange) freshness of marine notes, sensuality of woody and spicy accords (pepper, white musk). Energetic, modern.'
+                    description: 'Citrus-woody, spicy fragrance with bright citrus and marine notes.'
                 },
                 {
                     id: 8,
                     name: 'Milano',
                     brand: 'PRADA',
                     image: 'https://www.faces.sa/dw/image/v2/BJSM_PRD/on/demandware.static/-/Sites-faces-master-catalog/default/dw7af370cc/images/new%20images/prada/027017385793_3.jpg?sw=800&sh=800',
-                    description: 'Experience the fresh and floral Prada Milano perfume, a sophisticated fragrance with notes of neroli bud, white amber, and white musk.'
+                    description: 'Fresh and floral fragrance with notes of neroli bud and white amber.'
                 },
                 {
                     id: 12,
                     name: 'Gris',
                     brand: 'DIOR',
                     image: 'https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw06d3a32b/Y0840550/Y0840550_C099700392_E02_ZHC.jpg?sw=1800',
-                    description: 'This scent brings together multiple olfactory hues to create a mysterious chypre trail faceted by notes of citrus, rose, violet and oak moss.'
+                    description: 'A mysterious chypre trail with citrus, rose, violet and oak moss.'
                 },
                 {
                     id: 13,
                     name: 'Blooming Bouquet',
                     brand: 'DIOR',
                     image: 'https://i.icanvas.com/CMN93?d=2&sh=h&t=1759117839',
-                    description: 'Blooming Bouquet is the perfect springtime floral musk perfume, light-hearted, fresh and easy to love. It starts out with a slight fruity burst of apricot and peach.'
+                    description: 'Perfect springtime floral musk perfume with apricot and peach notes.'
                 },
                 {
                     id: 14,
                     name: 'Chance EAU Tendre',
                     brand: 'CHANEL',
                     image: 'https://www.chanel.com/puls-img/1742814757470-onepdpeditopushdesktopmobile01974x1298pxcetjpg_1298x974.jpg',
-                    description: 'Chanel Chance Eau Tendre EDT has a fruity-floral scent with notes of pink pepper, jasmine, and white musk.'
+                    description: 'Fruity-floral scent with notes of pink pepper, jasmine, and white musk.'
                 },
                 {
                     id: 15,
                     name: 'Eros EDP',
                     brand: 'VERSACE',
                     image: 'https://i.pinimg.com/736x/86/da/41/86da41942a89df8efed6ec382a40a702.jpg',
-                    description: 'This is a fragrance for the evening and cooler weather. It creates an aura of magnetism and luxury, perfect for dates and special occasions.'
+                    description: 'Fragrance for evening and cooler weather with aura of magnetism.'
                 },
                 {
                     id: 16,
                     name: 'Eros Energy',
                     brand: 'VERSACE',
                     image: 'https://i.pinimg.com/1200x/08/30/31/083031ab8d10bfcc52bfaf7353d54b93.jpg',
-                    description: 'Eros Energy is not a heavy, sweet scent but an invigorating, mood-boosting perfume that feels like a burst of energy.'
+                    description: 'Invigorating, mood-boosting perfume that feels like a burst of energy.'
                 },
                 {
                     id: 17,
                     name: 'Dylan Blue',
                     brand: 'VERSACE',
                     image: 'https://i.pinimg.com/1200x/e9/c9/c0/e9c9c0f7316625e1207af6315c49e1dc.jpg',
-                    description: 'This is the ultimate "go-anywhere" scent. Perfect for daily wear, the office, or a casual night out, Dylan Blue is incredibly easy to like and wear.'
+                    description: 'Ultimate "go-anywhere" scent perfect for daily wear.'
                 },
                 {
                     id: 18,
                     name: 'Stronger With You Absolutely',
                     brand: 'EMPORIO ARMANI',
                     image: 'https://i.pinimg.com/736x/14/40/61/1440612c2d3f0fdc5b81bee7e85efa51.jpg',
-                    description: 'This is a quintessential fragrance for cold weather and intimate evenings. It\'s incredibly warm, sweet, and projecting, designed to be a comforting yet powerful presence. Perfect for a romantic date night.'
+                    description: 'Quintessential fragrance for cold weather and intimate evenings.'
                 },
                 {
                     id: 19,
                     name: 'Aqua De Gio Profondo',
                     brand: 'GIORGIO ARMANI',
                     image: 'https://i.pinimg.com/736x/66/b0/32/66b032e3b2bc4e918906c850bd025489.jpg',
-                    description: 'This is a sophisticated daily scent for the modern man. It\'s perfect for any season but truly shines in the spring and summer.'
+                    description: 'Sophisticated daily scent for the modern man.'
                 },
                 {
                     id: 20,
@@ -4721,77 +5229,77 @@
                     name: 'Le Male Elixir',
                     brand: 'JEAN PAUL GAULTIER',
                     image: 'https://media.theperfumeshop.com/medias/sys_master/root/h8b/h3d/9128948138014/elixir/elixir.jpg',
-                    description: 'Its smell ignites the senses, delicately stirred by a vibrant dialogue between lavender\'s sensual accents, and a sweet vanilla benzoin.'
+                    description: 'Ignites the senses with lavender and sweet vanilla benzoin.'
                 },
                 {
                     id: 22,
                     name: 'Paradise Garden',
                     brand: 'JEAN PAUL GAULTIER',
                     image: 'https://product.hstatic.net/1000340570/product/le-beau-paradise-2_6707dd21194340e391ca5de569783aa0_master.jpg',
-                    description: 'This is a vacation in a bottle. It\'s a bold, sweet, and feminine scent designed for summer days and warm nights.'
+                    description: 'Bold, sweet, and feminine scent designed for summer days.'
                 },
                 {
                     id: 23,
                     name: 'Le Bleu EDT',
                     brand: 'JEAN PAUL GAULTIER',
                     image: 'https://i.pinimg.com/1200x/7d/24/7d/7d247dbbb70ae60d9b5f341e66cb53ec.jpg',
-                    description: 'This is a fragrance for confident men and warm evenings. It masterfully balances the playful sweetness of coconut with the mature depth of tonka bean and sandalwood.'
+                    description: 'Fragrance for confident men with coconut and sandalwood notes.'
                 },
                 {
                     id: 24,
                     name: 'Scandal Pour Homme EDP',
                     brand: 'JEAN PAUL GAULTIER',
                     image: 'https://i.pinimg.com/1200x/ef/55/f6/ef55f69e4072e06747300b0634a066c7.jpg',
-                    description: 'This is a fragrance for confident men and cool evenings. It\'s not a subtle scent but a powerful statement of seduction.'
+                    description: 'Powerful statement of seduction for confident men.'
                 },
                 {
                     id: 25,
                     name: 'The Most Wanted EDP',
                     brand: 'AZZARO',
                     image: 'https://i.pinimg.com/1200x/89/dd/98/89dd98c2faf7beb7971f3fbb6422a52f.jpg',
-                    description: 'This is a quintessential modern evening and date night fragrance. It projects confidence and sensuality through its masterful blend of spicy ginger, aromatic cardamom, and a sweet, woody foundation.'
+                    description: 'Modern evening and date night fragrance with spicy ginger.'
                 },
                 {
                     id: 26,
                     name: 'Born in Roma Extradose',
                     brand: 'VALENTINO',
                     image: 'https://i.pinimg.com/1200x/3a/0e/88/3a0e884ccc44be91544f0353547bba4f.jpg',
-                    description: 'A woody, aromatic, and spicy scent with a fresh, modern twist. It features a blend of spicy notes, a heart of wild or salty lavender, and a woody base of vetiver.'
+                    description: 'Woody, aromatic, and spicy scent with a fresh, modern twist.'
                 },
                 {
                     id: 27,
                     name: 'Born in Roma',
                     brand: 'VALENTINO',
                     image: 'https://media.theperfumeshop.com/medias/sys_master/images/hf1/h88/8866725756958/3614273672122-3-600x600/3614273672122-3-600x600.jpg',
-                    description: 'A sophisticated and modern fragrance that captures the essence of contemporary Roman elegance. Features bold notes of bergamot, ginger, and woody accords for a distinctive masculine scent.'
+                    description: 'Sophisticated and modern fragrance capturing Roman elegance.'
                 },
                 {
                     id: 28,
                     name: 'Sauvage Elixir',
                     brand: 'DIOR',
                     image: 'https://i.pinimg.com/736x/a9/4b/d4/a94bd436d6ac72d4af034460335d4c4f.jpg',
-                    description: 'A magnetic fragrance built on a powerful triad of spicy, woody, and amber notes, it is designed for a man of undeniable character.'
+                    description: 'Magnetic fragrance with spicy, woody, and amber notes.'
                 },
                 {
                     id: 30,
                     name: 'Y EDP',
                     brand: 'YVES SAINT LAURENT',
                     image: 'https://i.pinimg.com/1200x/ff/33/68/ff33681a5798ffb143a90d72ec1b2d8d.jpg',
-                    description: 'Yves Saint Laurent Y EDP is a modern, magnetic men\'s fragrance that opens with a crisp, juicy burst of green apple.'
+                    description: 'Modern, magnetic men\'s fragrance with green apple notes.'
                 },
                 {
                     id: 31,
                     name: 'Invictus Victory',
                     brand: 'PACO RABANNE',
                     image: 'https://i.pinimg.com/1200x/5b/35/9f/5b359faa48b3391293535f2c201e4174.jpg',
-                    description: 'This rich core is seamlessly wrapped in the warm, creamy sweetness of Vanilla Absolute, making the fragrance both powerful and deeply seductive.'
+                    description: 'Powerful fragrance with Vanilla Absolute and rich core.'
                 },
                 {
                     id: 32,
                     name: '1 Million Parfum',
                     brand: 'PACO RABANNE',
                     image: 'https://i.pinimg.com/1200x/28/e3/3d/28e33d4c798ea1fef747a49b2c464733.jpg',
-                    description: 'The base wraps everything in a warm, addictive embrace of Amber and Amyris Wood, creating a resinous, slightly sweet, and incredibly long-lasting trail.'
+                    description: 'Warm, addictive embrace of Amber and Amyris Wood.'
                 }
             ];
 
@@ -4862,7 +5370,7 @@
                 
                 if (ratings[productId]) {
                     setRating(stars, ratings[productId]);
-                    ratingText.textContent = `Your rating: ${ratings[productId]}/5`;
+                    ratingText.textContent = `Click to rate: ${ratings[productId]}/5`;
                 }
 
                 stars.forEach(star => {
@@ -4871,7 +5379,7 @@
                         setRating(stars, rating);
                         ratings[productId] = rating;
                         localStorage.setItem('ratings', JSON.stringify(ratings));
-                        ratingText.textContent = `Your rating: ${rating}/5`;
+                        ratingText.textContent = `Click to rate: ${rating}/5`;
                     });
                 });
             });
@@ -4894,7 +5402,7 @@
             cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
         }
 
-        // Wishlist functionality
+        // Wishlist functionality - HEART ICON IS BACK!
         function toggleWishlist(productId) {
             const productCard = document.querySelector(`[data-product-id="${productId}"]`);
             const wishlistBtn = productCard.querySelector('.wishlist-btn');
@@ -4948,11 +5456,13 @@
                     
                     this.classList.add('selected');
                     
-                    const price = this.getAttribute('data-price');
+                    const priceInLei = parseFloat(this.getAttribute('data-price')) || 0;
                     const priceElement = parentCard.querySelector('.price');
-                    priceElement.innerHTML = `${price}<span class="currency"> lei</span>`;
                     
-                    parentCard.setAttribute('data-product-price', price);
+                    priceElement.innerHTML = formatPrice(priceInLei, false).replace('lei', '').replace('€', '') + 
+                        '<span class="currency"> ' + (currentCurrency === 'lei' ? 'lei' : '€') + '</span>';
+                    
+                    parentCard.setAttribute('data-product-price', priceInLei);
                 });
             });
             
@@ -4961,8 +5471,14 @@
                 if (firstOption) {
                     firstOption.classList.add('selected');
                     const parentCard = firstOption.closest('.product-card');
-                    const price = firstOption.getAttribute('data-price');
-                    parentCard.setAttribute('data-product-price', price);
+                    const priceInLei = parseFloat(firstOption.getAttribute('data-price')) || 0;
+                    parentCard.setAttribute('data-product-price', priceInLei);
+                    
+                    const priceElement = parentCard.querySelector('.price');
+                    if (priceElement) {
+                        priceElement.innerHTML = formatPrice(priceInLei, false).replace('lei', '').replace('€', '') + 
+                            '<span class="currency"> ' + (currentCurrency === 'lei' ? 'lei' : '€') + '</span>';
+                    }
                 }
             });
         }
@@ -5003,7 +5519,7 @@
             }
             
             addToCartBtn.classList.add('added');
-            addToCartBtn.innerHTML = '<i class="fas fa-check"></i> Added!';
+            addToCartBtn.innerHTML = '<i class="fas fa-check"></i> Added to Cart!';
             showNotification(`${productName} added to cart! 🛒`, 'success');
             
             setTimeout(() => {
@@ -5062,7 +5578,6 @@
                         removeBtn.innerHTML = '<i class="fas fa-times"></i>';
                         removeBtn.onclick = function() { 
                             toggleWishlist(productId); 
-                            // Обновляем страницу wishlist после удаления
                             setTimeout(() => showWishlistPage(), 100);
                         };
                         wishlistProducts.appendChild(clonedCard);
@@ -5090,13 +5605,16 @@
                 cartTotal.style.display = 'block';
                 
                 cartProducts.innerHTML = '';
-                let totalAmount = 0;
+                let totalAmountInLei = 0;
                 
                 cart.forEach(item => {
-                    const itemPrice = parseFloat(item.price) || 0;
+                    const itemPriceInLei = parseFloat(item.price) || 0;
                     const itemQuantity = parseInt(item.quantity) || 0;
-                    const itemTotal = itemPrice * itemQuantity;
-                    totalAmount += itemTotal;
+                    const itemTotalInLei = itemPriceInLei * itemQuantity;
+                    totalAmountInLei += itemTotalInLei;
+                    
+                    const itemTotal = formatPrice(itemTotalInLei, false);
+                    const currencySymbol = currentCurrency === 'lei' ? 'lei' : '€';
                     
                     const cartItem = document.createElement('div');
                     cartItem.className = 'product-card';
@@ -5108,7 +5626,7 @@
                             <h3>${item.name}</h3>
                             <div class="brand">${item.brand}</div>
                             <div class="cart-product-info">
-                                <div class="price">${itemTotal}<span class="currency"> lei</span></div>
+                                <div class="price">${itemTotal}<span class="currency"> ${currencySymbol}</span></div>
                                 <div class="size-info">${item.quantity}x ${item.size}ml (${item.sprays} sprays)</div>
                             </div>
                             <div class="cart-item-controls">
@@ -5124,7 +5642,10 @@
                     cartProducts.appendChild(cartItem);
                 });
                 
-                document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+                const totalAmount = formatPrice(totalAmountInLei, false);
+                const cartCurrency = document.getElementById('cart-currency');
+                cartCurrency.textContent = currentCurrency === 'lei' ? 'lei' : '€';
+                document.getElementById('total-amount').textContent = totalAmount;
             }
         }
 
@@ -5169,6 +5690,62 @@
             document.querySelector(`.theme-btn[onclick="setTheme('${theme}')"]`).classList.add('active');
         }
 
+        // NEW: Handle country change in checkout
+        function handleCountryChange() {
+            const countrySelect = document.getElementById('country');
+            const citySelect = document.getElementById('city');
+            const euDeliverySection = document.getElementById('euDeliverySection');
+            
+            selectedCountry = countrySelect.value;
+            
+            if (selectedCountry === 'EU') {
+                // Show EU countries in city select
+                citySelect.innerHTML = '<option value="">Select EU Country</option>';
+                euCountries.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country;
+                    option.textContent = country;
+                    citySelect.appendChild(option);
+                });
+                
+                // Show EU delivery section
+                euDeliverySection.classList.add('active');
+                
+                // Update map info
+                document.getElementById('mapTitle').textContent = 'European Union';
+                document.getElementById('mapSubtitle').textContent = 'Select your EU country';
+                
+                // Update delivery status
+                updateDeliveryStatus();
+            } else {
+                // Show Romanian cities
+                citySelect.innerHTML = '<option value="">Select City</option>';
+                romanianCities.forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+                
+                // Hide EU delivery section
+                euDeliverySection.classList.remove('active');
+                
+                // Reset map info
+                document.getElementById('mapTitle').textContent = 'Romania Map';
+                document.getElementById('mapSubtitle').textContent = 'Select your location';
+                
+                // Update delivery status
+                updateDeliveryStatus();
+            }
+        }
+
+        // NEW: Handle city change
+        function handleCityChange() {
+            const citySelect = document.getElementById('city');
+            selectedCity = citySelect.value;
+            updateDeliveryStatus();
+        }
+
         // Function to update delivery status
         function updateDeliveryStatus() {
             const deliveryStatus = document.getElementById('deliveryStatus');
@@ -5183,7 +5760,7 @@
                     continueButton.disabled = true;
                 }
             } else {
-                deliveryStatus.innerHTML = '<div class="delivery-available">✅ Delivery available to all cities in Romania</div>';
+                deliveryStatus.innerHTML = '<div class="delivery-available">✅ Delivery available</div>';
                 continueButton.disabled = false;
             }
         }
@@ -5193,12 +5770,18 @@
             const citySelect = document.getElementById('city');
             const mapTitle = document.getElementById('mapTitle');
             const mapSubtitle = document.getElementById('mapSubtitle');
+            const euDeliverySection = document.getElementById('euDeliverySection');
             
             if (selectedPaymentMethod === 'cash') {
                 citySelect.innerHTML = '<option value="">Select City</option><option value="Constanța">Constanța</option>';
                 mapTitle.textContent = 'Constanța Area';
                 mapSubtitle.textContent = 'Cash on Delivery available only in Constanța';
+                euDeliverySection.classList.remove('active');
             } else {
+                // Reset to Romania by default
+                document.getElementById('country').value = 'Romania';
+                selectedCountry = 'Romania';
+                
                 citySelect.innerHTML = '<option value="">Select City</option>';
                 romanianCities.forEach(city => {
                     const option = document.createElement('option');
@@ -5208,23 +5791,48 @@
                 });
                 mapTitle.textContent = 'Romania Map';
                 mapSubtitle.textContent = 'Select your location';
+                euDeliverySection.classList.remove('active');
             }
             
             updateDeliveryStatus();
         }
 
-        // UPDATED ORDER NOTIFICATION FUNCTION - FIXED VERSION
+        // UPDATED ORDER NOTIFICATION FUNCTION with better supplier info
         async function sendOrderNotification(orderData) {
             try {
                 console.log('🔄 Starting order notification process...', orderData);
                 
                 // Format order details for email
                 const orderDetails = orderData.items.map(item => 
-                    `• ${item.quantity}x ${item.name} (${item.brand}) - ${item.size}ml - ${(item.price * item.quantity).toFixed(2)} lei`
+                    `• ${item.quantity}x ${item.name} (${item.brand}) - ${item.size}ml - ${formatPrice(item.price * item.quantity)}`
                 ).join('\n');
 
                 // Calculate total
                 const total = orderData.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+                // Get supplier info
+                let supplierInfo = 'Standard Delivery';
+                let shippingPriceInfo = '';
+                
+                if (orderData.country === 'EU' && orderData.supplier) {
+                    switch(orderData.supplier) {
+                        case 'posta-romana':
+                            supplierInfo = 'Poşta Romana';
+                            shippingPriceInfo = '20€ (estimated)';
+                            break;
+                        case 'dhl':
+                            supplierInfo = 'DHL Express';
+                            shippingPriceInfo = '40-70€ (estimated)';
+                            break;
+                        case 'fedex':
+                            supplierInfo = 'FedEx';
+                            shippingPriceInfo = '50-100€ (estimated)';
+                            break;
+                    }
+                } else {
+                    supplierInfo = 'Standard Delivery (Romania)';
+                    shippingPriceInfo = '25 lei';
+                }
 
                 // Prepare template parameters
                 const templateParams = {
@@ -5235,25 +5843,31 @@
                     customer_telegram: orderData.telegram || 'Not specified',
                     customer_instagram: orderData.instagram || 'Not specified',
                     payment_method: orderData.paymentMethod === 'cash' ? 'Cash on Delivery' : 'Contact Payment',
-                    delivery_address: `${orderData.address}, ${orderData.city}, ${orderData.country}`,
-                    order_total: `${total.toFixed(2)} lei`,
+                    delivery_country: orderData.country,
+                    delivery_city: orderData.city,
+                    delivery_address: orderData.address,
+                    delivery_supplier: supplierInfo,
+                    shipping_cost: shippingPriceInfo,
+                    rambus_cost: orderData.rambusCost ? formatPrice(orderData.rambusCost) : '0',
+                    order_total: formatPrice(total + (orderData.shippingCost || 0) + (orderData.rambusCost || 0)),
                     order_details: orderDetails,
-                    order_date: new Date().toLocaleString('ro-RO'),
-                    to_email: 'nandreevic89@gmail.com'
+                    order_date: new Date().toLocaleString('en-US'),
+                    to_email: 'nandreevic89@gmail.com',
+                    subject: `New Order #${orderData.orderId} - ${orderData.country}`
                 };
 
                 console.log('📧 Sending email with params:', templateParams);
 
-                // Send to admin (тебе)
+                // Send to admin
                 const adminResponse = await emailjs.send(
-                    'service_nwd6qll', // Твой Service ID
-                    'template_bvehdni', // Твой Template ID
+                    'service_nwd6qll',
+                    'template_bvehdni',
                     templateParams
                 );
 
                 console.log('✅ Admin notification sent successfully!', adminResponse);
 
-                // Если есть email клиента, отправляем и ему копию
+                // Send copy to customer if email exists
                 if (orderData.emailAddress && orderData.emailAddress.includes('@')) {
                     try {
                         const customerTemplateParams = {
@@ -5308,18 +5922,26 @@
             selectedPaymentMethod = '';
             selectedCity = '';
             selectedCountry = 'Romania';
+            selectedSupplier = '';
             orderData = {
                 paymentMethod: '',
                 country: '',
                 city: '',
                 address: '',
+                supplier: '',
                 total: 0
             };
             
+            // Reset all selections
             document.querySelectorAll('.payment-method').forEach(method => {
                 method.classList.remove('selected');
             });
             
+            document.querySelectorAll('.supplier-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Reset all inputs
             document.getElementById('address').value = '';
             document.getElementById('phoneNumber').value = '';
             document.getElementById('emailAddress').value = '';
@@ -5330,6 +5952,9 @@
             document.getElementById('cashTelegram').value = '';
             document.getElementById('cashInstagram').value = '';
             document.getElementById('city').value = '';
+            document.getElementById('country').value = 'Romania';
+            document.getElementById('rambusOption').checked = false;
+            document.getElementById('cardOption').checked = false;
             
             document.querySelectorAll('.error-message').forEach(error => {
                 error.style.display = 'none';
@@ -5408,17 +6033,28 @@
                     break;
                     
                 case 3:
+                    // Validate supplier selection for EU countries
+                    if (selectedCountry === 'EU' && !selectedSupplier) {
+                        alert('Please select a delivery supplier for EU countries');
+                        isValid = false;
+                    }
+                    break;
+                    
+                case 4:
                     if (selectedPaymentMethod === 'contact') {
                         const phoneNumber = document.getElementById('phoneNumber').value;
                         const emailAddress = document.getElementById('emailAddress').value;
                         
-                        if (!phoneNumber || !/^\+?[\d\s\-\(\)]{10,}$/.test(phoneNumber)) {
+                        // УБРАНО ОГРАНИЧЕНИЕ НА РУМЫНСКИЙ НОМЕР - только проверка на наличие
+                        if (!phoneNumber || phoneNumber.trim() === '') {
                             document.getElementById('phoneError').style.display = 'block';
+                            document.getElementById('phoneError').textContent = 'Please enter your phone number';
                             isValid = false;
                         }
                         
                         if (!emailAddress || !/^\S+@\S+\.\S+$/.test(emailAddress)) {
                             document.getElementById('emailError').style.display = 'block';
+                            document.getElementById('emailError').textContent = 'Please enter a valid email address';
                             isValid = false;
                         }
                         
@@ -5434,13 +6070,16 @@
                         const phoneNumber = document.getElementById('cashPhoneNumber').value;
                         const emailAddress = document.getElementById('cashEmailAddress').value;
                         
-                        if (!phoneNumber || !/^\+?[\d\s\-\(\)]{10,}$/.test(phoneNumber)) {
+                        // УБРАНО ОГРАНИЧЕНИЕ НА РУМЫНСКИЙ НОМЕР - только проверка на наличие
+                        if (!phoneNumber || phoneNumber.trim() === '') {
                             document.getElementById('cashPhoneError').style.display = 'block';
+                            document.getElementById('cashPhoneError').textContent = 'Please enter your phone number';
                             isValid = false;
                         }
                         
                         if (!emailAddress || !/^\S+@\S+\.\S+$/.test(emailAddress)) {
                             document.getElementById('cashEmailError').style.display = 'block';
+                            document.getElementById('cashEmailError').textContent = 'Please enter a valid email address';
                             isValid = false;
                         }
                         
@@ -5462,6 +6101,9 @@
             if (currentStep === 2) {
                 updateLocationStepUI();
             } else if (currentStep === 3) {
+                // Initialize supplier selection
+                initSupplierSelection();
+            } else if (currentStep === 4) {
                 const paymentTitle = document.getElementById('paymentTitle');
                 if (selectedPaymentMethod === 'contact') {
                     paymentTitle.textContent = 'Contact Information';
@@ -5471,7 +6113,10 @@
                     
                     document.getElementById('deliveryAddress').textContent = 
                         `${orderData.address}, ${selectedCity}, ${selectedCountry}`;
-                    document.getElementById('contactTotalAmount').textContent = orderData.total.toFixed(2);
+                    
+                    const totalInLei = orderData.total;
+                    document.getElementById('contactTotalAmount').textContent = formatPrice(totalInLei, false);
+                    document.getElementById('contact-currency').textContent = currentCurrency === 'lei' ? 'lei' : '€';
                 } else {
                     paymentTitle.textContent = 'Cash on Delivery';
                     document.getElementById('contactPaymentForm').style.display = 'none';
@@ -5480,28 +6125,108 @@
                     
                     document.getElementById('cashDeliveryAddress').textContent = 
                         `${orderData.address}, ${selectedCity}, ${selectedCountry}`;
-                    document.getElementById('cashTotalAmount').textContent = orderData.total.toFixed(2);
+                    
+                    const totalInLei = orderData.total;
+                    document.getElementById('cashTotalAmount').textContent = formatPrice(totalInLei, false);
+                    document.getElementById('cash-currency').textContent = currentCurrency === 'lei' ? 'lei' : '€';
+                }
+                
+                updateCheckoutSummary();
+            }
+        }
+
+        // NEW: Initialize supplier selection
+        function initSupplierSelection() {
+            document.querySelectorAll('.supplier-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    document.querySelectorAll('.supplier-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    this.classList.add('selected');
+                    selectedSupplier = this.getAttribute('data-supplier');
+                    orderData.supplier = selectedSupplier;
+                    
+                    // Update shipping cost in summary
+                    updateCheckoutSummary();
+                });
+            });
+            
+            // Auto-select first supplier for EU
+            if (selectedCountry === 'EU' && !selectedSupplier) {
+                const firstSupplier = document.querySelector('.supplier-option');
+                if (firstSupplier) {
+                    firstSupplier.click();
                 }
             }
         }
 
+        // Calculate shipping and additional options
+        function calculateShippingAndOptions() {
+            const rambusOption = document.getElementById('rambusOption');
+            const cardOption = document.getElementById('cardOption');
+            
+            let shippingCostInLei = 0;
+            let rambusCostInLei = 0;
+            
+            // Calculate shipping cost based on supplier
+            if (selectedCountry === 'EU' && selectedSupplier) {
+                switch(selectedSupplier) {
+                    case 'posta-romana':
+                        shippingCostInLei = 20 * EUR_TO_LEI_RATE; // Convert €20 to lei
+                        break;
+                    case 'dhl':
+                        shippingCostInLei = 40 * EUR_TO_LEI_RATE; // Minimum €40 to lei
+                        break;
+                    case 'fedex':
+                        shippingCostInLei = 50 * EUR_TO_LEI_RATE; // Minimum €50 to lei
+                        break;
+                }
+            } else {
+                // Standard shipping for Romania
+                shippingCostInLei = 25; // Fixed cost
+            }
+            
+            if (rambusOption && rambusOption.checked) {
+                rambusCostInLei = 5; // Additional option
+            }
+            
+            // Card option doesn't add cost, just info for seller
+            if (cardOption && cardOption.checked) {
+                orderData.cardRequested = true;
+            }
+            
+            return {
+                shipping: shippingCostInLei,
+                rambus: rambusCostInLei
+            };
+        }
+
         function updateCheckoutSummary() {
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let subtotal = 0;
+            let subtotalInLei = 0;
             
             cart.forEach(item => {
                 const itemPrice = parseFloat(item.price) || 0;
                 const itemQuantity = parseInt(item.quantity) || 0;
-                subtotal += itemPrice * itemQuantity;
+                subtotalInLei += itemPrice * itemQuantity;
             });
             
-            // УДАЛЕН SHIPPING
-            const total = subtotal;
-            orderData.total = total;
+            // Calculate shipping and options
+            const additionalCosts = calculateShippingAndOptions();
+            const shippingCostInLei = additionalCosts.shipping;
+            const rambusCostInLei = additionalCosts.rambus;
             
-            document.getElementById('checkoutSubtotal').textContent = `${subtotal.toFixed(2)} lei`;
-            document.getElementById('checkoutShipping').textContent = `0 lei`; // Бесплатная доставка
-            document.getElementById('checkoutTotal').textContent = `${total.toFixed(2)} lei`;
+            const totalInLei = subtotalInLei + shippingCostInLei + rambusCostInLei;
+            orderData.total = totalInLei;
+            orderData.shippingCost = shippingCostInLei;
+            orderData.rambusCost = rambusCostInLei;
+            
+            // Update display
+            document.getElementById('checkoutSubtotal').innerHTML = `${formatPrice(subtotalInLei, false)} <span class="summary-currency">${currentCurrency === 'lei' ? 'lei' : '€'}</span>`;
+            document.getElementById('checkoutShipping').innerHTML = `${formatPrice(shippingCostInLei, false)} <span class="summary-currency">${currentCurrency === 'lei' ? 'lei' : '€'}</span>`;
+            document.getElementById('checkoutRambus').innerHTML = `${formatPrice(rambusCostInLei, false)} <span class="summary-currency">${currentCurrency === 'lei' ? 'lei' : '€'}</span>`;
+            document.getElementById('checkoutTotal').innerHTML = `${formatPrice(totalInLei, false)} <span class="summary-currency">${currentCurrency === 'lei' ? 'lei' : '€'}</span>`;
         }
 
         function processPayment() {
@@ -5514,61 +6239,110 @@
             
             const cart = JSON.parse(localStorage.getItem('cart')) || [];
             
-            // Подготавливаем данные для уведомления
+            // Calculate costs
+            const additionalCosts = calculateShippingAndOptions();
+            
+            // Prepare order data
             const orderNotificationData = {
                 orderId: orderId,
                 paymentMethod: selectedPaymentMethod,
                 country: selectedCountry,
                 city: selectedCity,
                 address: orderData.address,
+                supplier: selectedSupplier || 'Standard Delivery',
                 items: cart,
+                shippingCost: additionalCosts.shipping,
+                rambusCost: additionalCosts.rambus,
                 emailAddress: selectedPaymentMethod === 'contact' ? document.getElementById('emailAddress')?.value : document.getElementById('cashEmailAddress')?.value || '',
                 phoneNumber: selectedPaymentMethod === 'contact' ? document.getElementById('phoneNumber')?.value : document.getElementById('cashPhoneNumber')?.value || '',
                 telegram: selectedPaymentMethod === 'contact' ? document.getElementById('telegram')?.value : document.getElementById('cashTelegram')?.value || '',
                 instagram: selectedPaymentMethod === 'contact' ? document.getElementById('instagram')?.value : document.getElementById('cashInstagram')?.value || '',
-                customerName: 'Customer'
+                customerName: 'Customer',
+                cardRequested: document.getElementById('cardOption')?.checked || false
             };
 
             console.log('🛒 Processing order:', orderNotificationData);
 
-            // Показываем уведомление о процессе
+            // Show processing notification
             showNotification('Processing your order... ⏳', 'success');
 
-            // Обновляем сообщение подтверждения
+            // Update confirmation message
+            const confirmationTitle = document.getElementById('confirmationTitle');
             const confirmationMessage = document.getElementById('confirmationMessage');
+            const euConfirmationMessage = document.getElementById('euConfirmationMessage');
             const confirmationSocialOptions = document.getElementById('confirmationSocialOptions');
             
-            if (selectedPaymentMethod === 'cash') {
-                confirmationMessage.textContent = 'Your Cash on Delivery order has been confirmed! You will pay when you receive your order.';
+            if (selectedCountry === 'EU') {
+                confirmationTitle.textContent = 'Order Submitted!';
+                confirmationMessage.textContent = 'Your order has been submitted successfully.';
+                euConfirmationMessage.style.display = 'block';
                 confirmationSocialOptions.style.display = 'none';
             } else {
-                confirmationMessage.textContent = 'You have selected the payment method. Please go to the section you selected (Telegram, Instagram or WhatsApp) to complete your payment.';
+                confirmationTitle.textContent = 'Order Confirmed!';
+                confirmationMessage.textContent = 'Your order has been placed successfully. We will contact you shortly to confirm delivery details.';
+                euConfirmationMessage.style.display = 'none';
                 confirmationSocialOptions.style.display = 'flex';
             }
 
-            // Отправляем уведомление
+            // Send notification
             sendOrderNotification(orderNotificationData).then(success => {
                 if (success) {
-                    // Очищаем корзину только если уведомление отправлено успешно
+                    // Clear cart only if notification sent successfully
                     localStorage.setItem('cart', JSON.stringify([]));
                     cart.length = 0;
                     updateCounters();
-                    goToStep(4);
+                    goToStep(5);
                 }
             });
         }
 
-        // Initialize
+        // Initialize checkout event listeners
+        function initCheckoutListeners() {
+            // Payment method selection
+            document.querySelectorAll('.payment-method').forEach(method => {
+                method.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-method').forEach(m => {
+                        m.classList.remove('selected');
+                    });
+                    
+                    this.classList.add('selected');
+                    selectedPaymentMethod = this.getAttribute('data-method');
+                    orderData.paymentMethod = selectedPaymentMethod;
+                    
+                    // Update location step UI
+                    if (currentStep >= 2) {
+                        updateLocationStepUI();
+                    }
+                });
+            });
+            
+            // Country change
+            document.getElementById('country').addEventListener('change', handleCountryChange);
+            
+            // City change
+            document.getElementById('city').addEventListener('change', handleCityChange);
+            
+            // Address input
+            document.getElementById('address').addEventListener('input', function() {
+                orderData.address = this.value;
+            });
+            
+            // Additional options changes
+            document.getElementById('rambusOption').addEventListener('change', updateCheckoutSummary);
+            document.getElementById('cardOption').addEventListener('change', updateCheckoutSummary);
+        }
+
+        // Initialize everything
         document.addEventListener('DOMContentLoaded', function() {
             updateCounters();
             updateWishlistButtons();
             initSizeSelectors();
             initSearch();
             initRatings();
+            initCurrency();
+            initCheckoutListeners();
             
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            setTheme(savedTheme);
-            
+            // Event listeners for header actions
             wishlistIcon.addEventListener('click', function(e) {
                 e.preventDefault();
                 showWishlistPage();
@@ -5578,66 +6352,39 @@
                 e.preventDefault();
                 showCartPage();
             });
-
-            document.querySelectorAll('.payment-method').forEach(method => {
-                method.addEventListener('click', function() {
-                    document.querySelectorAll('.payment-method').forEach(m => {
-                        m.classList.remove('selected');
-                    });
-                    this.classList.add('selected');
-                    selectedPaymentMethod = this.getAttribute('data-method');
-                    orderData.paymentMethod = selectedPaymentMethod;
-                    
-                    if (currentStep === 2) {
-                        updateLocationStepUI();
-                    }
-                });
-            });
             
-            const countrySelect = document.getElementById('country');
-            countrySelect.addEventListener('change', function() {
-                selectedCountry = this.value;
-                updateCheckoutSummary();
-            });
+            // Initialize saved theme
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
             
-            const citySelect = document.getElementById('city');
-            citySelect.addEventListener('change', function() {
-                selectedCity = this.value;
-                updateDeliveryStatus();
-                updateCheckoutSummary();
-            });
-            
-            const addressInput = document.getElementById('address');
-            addressInput.addEventListener('input', function() {
-                document.getElementById('addressError').style.display = 'none';
-            });
-            
-            document.getElementById('phoneNumber').addEventListener('input', function() {
-                document.getElementById('phoneError').style.display = 'none';
-            });
-            
-            document.getElementById('emailAddress').addEventListener('input', function() {
-                document.getElementById('emailError').style.display = 'none';
-            });
-            
-            document.getElementById('cashPhoneNumber').addEventListener('input', function() {
-                document.getElementById('cashPhoneError').style.display = 'none';
-            });
-            
-            document.getElementById('cashEmailAddress').addEventListener('input', function() {
-                document.getElementById('cashEmailError').style.display = 'none';
-            });
-            
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes pulse {
-                    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
-                    70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
-                    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+            // Update sprays info to be compact
+            document.querySelectorAll('.sprays-info').forEach(el => {
+                const text = el.textContent;
+                const spraysNumber = text.match(/\d+/);
+                if (spraysNumber) {
+                    el.textContent = `${spraysNumber[0]} sprays`;
                 }
-            `;
-            document.head.appendChild(style);
+            });
         });
+
+        // Make functions available globally
+        window.toggleWishlist = toggleWishlist;
+        window.addToCart = addToCart;
+        window.removeFromCart = removeFromCart;
+        window.updateQuantity = updateQuantity;
+        window.showHomePage = showHomePage;
+        window.showProducts = showProducts;
+        window.showContacts = showContacts;
+        window.showCollection = showCollection;
+        window.setTheme = setTheme;
+        window.enterShop = enterShop;
+        window.openCheckout = openCheckout;
+        window.closeCheckout = closeCheckout;
+        window.closeCheckoutAndReset = closeCheckoutAndReset;
+        window.goToStep = goToStep;
+        window.processPayment = processPayment;
+        window.handleCountryChange = handleCountryChange;
+        window.handleCityChange = handleCityChange;
     </script>
 </body>
 </html>
