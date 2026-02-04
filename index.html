@@ -5830,8 +5830,14 @@
                             break;
                     }
                 } else {
-                    supplierInfo = 'Standard Delivery (Romania)';
-                    shippingPriceInfo = '25 lei';
+                    // Для румынских городов
+                    if (orderData.city === 'Constanța') {
+                        supplierInfo = 'Free Delivery (Constanța)';
+                        shippingPriceInfo = '0 lei';
+                    } else {
+                        supplierInfo = 'Standard Delivery (Romania)';
+                        shippingPriceInfo = '25 lei';
+                    }
                 }
 
                 // Prepare template parameters
@@ -6184,7 +6190,12 @@
                 }
             } else {
                 // Standard shipping for Romania
-                shippingCostInLei = 25; // Fixed cost
+                // БЕСПЛАТНАЯ ДОСТАВКА ДЛЯ Constanta, для других городов 25 лей
+                if (selectedCity === 'Constanța') {
+                    shippingCostInLei = 0; // Бесплатная доставка для Constanta
+                } else {
+                    shippingCostInLei = 25; // Fixed cost для других румынских городов
+                }
             }
             
             if (rambusOption && rambusOption.checked) {
